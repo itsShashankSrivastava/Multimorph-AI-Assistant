@@ -6,7 +6,14 @@
 #Step1: Setup UI with streamlit (model provider, model, system prompt, web_search, query)
 import streamlit as st
 
-st.set_page_config(page_title="LangGraph Agent UI", layout="centered")
+# st.set_page_config(page_title="LangGraph Agent UI", layout="centered")
+st.set_page_config(
+    page_title="MultiMorph AI Assistant",
+    page_icon="🤖",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 
 st.markdown(
     """
@@ -24,16 +31,15 @@ st.markdown(
 # Add the image with the custom CSS class
 st.markdown('<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVqAOZRUkZgZMc_kqNTAOGEee8PPywg2aWBHU5rFheDS3rL0mzc7foF3ahWrfFDOgyzfg&usqp=CAU" class="rounded-image">', unsafe_allow_html=True)
 
-
-st.title("MultiMorph: Your Anytime Assistant")
-st.write("Create and Interact with the AI Agents!")
+st.title("MultiMorph AI Assistant")
+st.write("Your versatile AI partner for any task !!")
 
 system_prompt=st.text_area("Define your AI Agent: ", height=70, placeholder="Type your system prompt here...")
 
 MODEL_NAMES_GROQ = ["llama-3.3-70b-versatile", "mixtral-8x7b-32768"]
 MODEL_NAMES_ANTHROPIC = ["claude-3-5-sonnet-20241022"]
 
-provider=st.radio("Select Provider:", ("Groq", "OpenAI"))
+provider=st.radio("Select Provider:", ("Groq", "Anthropic"))
 
 if provider == "Groq":
     selected_model = st.selectbox("Select Groq Model:", MODEL_NAMES_GROQ)
