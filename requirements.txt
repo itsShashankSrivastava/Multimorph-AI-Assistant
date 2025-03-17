@@ -1,0 +1,12 @@
+langchain
+langchain_groq
+langchain_community
+langgraph
+python-dotenv
+langchain_openai
+pydantic
+langchain-anthropic
+wikipedia 
+uvicorn
+fastapi
+streamlit
